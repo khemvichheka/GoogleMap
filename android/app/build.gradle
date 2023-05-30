@@ -46,6 +46,7 @@ android {
     defaultConfig {
     // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
     applicationId "com.example.google_maps"
+    multiDexEnabled true
     minSdkVersion 20
     targetSdkVersion 30
     versionCode flutterVersionCode.toInteger()
@@ -67,4 +68,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+     implementation 'com.android.support:multidex:2.0.1'
 }

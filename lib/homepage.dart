@@ -72,6 +72,17 @@ class _HomePageMapState extends State<HomePageMap> {
                 },   
               ),
             ),
+            Card(
+              color: Colors.cyan,
+              child: ListTile(
+                leading: Icon(Icons.search),
+                title: Text('Search Location'),
+                trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  Navigator.pushNamed(context, '/SearchLocation');
+                },   
+              ),
+            ),
           ],
         ),
       ),
