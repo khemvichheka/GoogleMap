@@ -15,27 +15,37 @@ class CustomMarker extends StatefulWidget {
 class _CustomMarkerState extends State<CustomMarker> {
   final Completer<GoogleMapController> _controller = Completer();
   Uint8List? markerImage;
-  List<String> images = [
-    'images/car.png',
-    'images/car2.png',
-    'images/air-freight.png',
-    'images/food-delivery.png',
-    'images/scooter.png',
-    'images/smart-car.png'
+ List<Map<String, dynamic>> data = [
+    // 'images/car.png',
+    // 'images/car2.png',
+    // 'images/air-freight.png',
+    { 
+      "title": "Royal University of Phnom Penh",
+      "description":"Russian Federation Blvd (110), Phnom Penh, Cambodia",
+      "image":'images/food-delivery.png',
+    },
+    { 
+      "title": "Setec Institude",
+      "image": 'images/smart-car.png',
+      "description":"No. 86A, Street 110, Russian Federation Blvd (110), Phnom Penh, Cambodia"
+    },
+    { 
+      "title": "Institute of foriegn langues",
+      "image": 'images/scooter.png',     
+      "description": "Russian Federation Blvd (110), Phnom Penh, Cambodia"
+    }
+   
   ];
   final List<Marker> _marker = <Marker>[
-    Marker(markerId: MarkerId('12'), position: LatLng(33.6941, 72.9734))
+    Marker(markerId: MarkerId('12'), position: LatLng(11.56986,104.89162))
   ];
   final List<LatLng> _latLang = <LatLng>[
-    LatLng(33.6941, 72.9734),
-    LatLng(33.7008, 72.9682),
-    LatLng(33.6992, 72.9744),
-    LatLng(33.6939, 72.9771),
-    LatLng(33.6910, 72.9807),
-    LatLng(33.7036, 72.9785)
+    LatLng (11.56854,104.89073),
+    LatLng (11.56838,104.89477),
+    LatLng (11.56906,104.89321),
   ];
   static const CameraPosition _kGooglePlex =
-      CameraPosition(target: LatLng(33.6910, 72.98072), zoom: 15);
+      CameraPosition(target: LatLng(11.56906,104.89321), zoom:16);
   Future<Uint8List> getBytesFoemAssets(String path, int width) async {
     ByteData data = await rootBundle.load(path);
     ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
@@ -43,24 +53,22 @@ class _CustomMarkerState extends State<CustomMarker> {
     ui.FrameInfo fi = await codec.getNextFrame();
     return (await fi.image.toByteData(format: ui.ImageByteFormat.png))!.buffer.asUint8List();
   }
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
 
   loadData() async {
-    for (int i = 0; i < images.length; i++) {
-      final Uint8List markerIcon = await getBytesFoemAssets(images[i], 100);
+    for (int i = 0; i < data.length; i++) {
+      final Uint8List markerIcon = await getBytesFoemAssets(data[i]['image'], 100);
       _marker.add(
         Marker(
             markerId: MarkerId(i.toString()),
             position: _latLang[i],
             icon: BitmapDescriptor.fromBytes(markerIcon),
             infoWindow:
-                InfoWindow(title: 'this is title marker :' + i.toString())),
+                InfoWindow(title:data[i]['title'])),
       );
       setState(() {});
     }

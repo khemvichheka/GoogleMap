@@ -13,7 +13,6 @@ class _CreateMarkerState extends State<CreateMarker> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     allMarkers.add(Marker(
         markerId: MarkerId('myMarker'),
@@ -21,7 +20,9 @@ class _CreateMarkerState extends State<CreateMarker> {
         onTap: () {
           print('Marker Tapped');
         },
-        position: LatLng(40.7128, -74.0060)));
+        position: LatLng(11.57629, 104.92329)
+      )
+    );
   }
 
   @override
@@ -37,7 +38,7 @@ class _CreateMarkerState extends State<CreateMarker> {
           width: MediaQuery.of(context).size.width,
           child: GoogleMap(
             initialCameraPosition:
-                CameraPosition(target: LatLng(40.7128, -74.0060), zoom: 12.0),
+                CameraPosition(target: LatLng(11.562108, 104.888535), zoom: 12.0),
             markers: Set.from(allMarkers),
             onMapCreated: mapCreated,
           ),
@@ -45,30 +46,39 @@ class _CreateMarkerState extends State<CreateMarker> {
         Align(
           alignment: Alignment.bottomCenter,
           child: InkWell(
-            onTap: movetoBoston,
-            child: Container(
-              height: 40.0,
-              width: 40.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                color: Colors.green
+            onTap: moveToPreahSihanouk,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                height: 40.0,
+                width: 40.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Colors.green
+                ),
+                child: Icon(Icons.forward, color: Colors.white),
               ),
-              child: Icon(Icons.forward, color: Colors.white),
             ),
           ),
         ),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: InkWell(
-            onTap: movetoNewYork,
-            child: Container(
-              height: 40.0,
-              width: 40.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                color: Colors.red
+        Padding(
+          padding: const EdgeInsets.only(right: 50),
+          child: Align(
+            alignment: Alignment.bottomRight,
+            child: InkWell(
+              onTap: movetoPhnomPenh,
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  height: 40.0,
+                  width: 40.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.red
+                  ),
+                  child: Icon(Icons.backspace, color: Colors.white),
+                ),
               ),
-              child: Icon(Icons.backspace, color: Colors.white),
             ),
           ),
         )
@@ -83,15 +93,15 @@ class _CreateMarkerState extends State<CreateMarker> {
     });
   }
 
-  movetoBoston() {
+  moveToPreahSihanouk() {
     _controller.animateCamera(CameraUpdate.newCameraPosition(
-      CameraPosition(target: LatLng(42.3601, -71.0589), zoom: 14.0, bearing: 45.0, tilt: 45.0),
+      CameraPosition(target: LatLng(10.627543, 103.522141), zoom: 14.0, bearing: 45.0, tilt: 45.0,),
     ));
   }
 
-  movetoNewYork() {
+  movetoPhnomPenh() {
     _controller.animateCamera(CameraUpdate.newCameraPosition(
-      CameraPosition(target: LatLng(40.7128, -74.0060), zoom: 12.0),
+      CameraPosition(target: LatLng(11.562108, 104.888535), zoom: 12.0),
     ));
   }
 }
