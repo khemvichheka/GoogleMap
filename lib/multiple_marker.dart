@@ -11,7 +11,7 @@ class MultipleMarker extends StatefulWidget {
 class _MultipleMarkerState extends State<MultipleMarker> {
     late GoogleMapController mapController;
   final Set<Marker> markers = new Set(); 
-  static const LatLng showLocation = const LatLng(27.7089427, 85.3086209); 
+  static const LatLng showLocation = const LatLng(11.56906,104.89321); 
   
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _MultipleMarkerState extends State<MultipleMarker> {
                     zoomGesturesEnabled: true, 
                     initialCameraPosition: CameraPosition( 
                       target: showLocation,
-                      zoom: 15.0, 
+                      zoom: 16.0, 
                     ),
                     markers: getmarkers(), 
                     mapType: MapType.normal, 
@@ -33,7 +33,7 @@ class _MultipleMarkerState extends State<MultipleMarker> {
                         mapController = controller; 
                       });
                     },
-                  ),
+                ),
        );
   }
 
@@ -43,28 +43,29 @@ class _MultipleMarkerState extends State<MultipleMarker> {
         markerId: MarkerId(showLocation.toString()),
         position: showLocation, 
         infoWindow: InfoWindow( 
-          title: 'Marker Title First ',
-          snippet: 'My Custom Subtitle',
+          title: 'IFL ',
+          snippet: 'My location',
+          
         ),
         icon: BitmapDescriptor.defaultMarker, 
       ));
 
       markers.add(Marker( 
         markerId: MarkerId(showLocation.toString()),
-        position: LatLng(27.7099116, 85.3132343), 
+        position: LatLng(11.56854,104.89073), 
         infoWindow: InfoWindow(
-          title: 'Marker Title Second ',
-          snippet: 'My Custom Subtitle',
+          title: 'RUPP ',
+          snippet: 'My location',
         ),
         icon: BitmapDescriptor.defaultMarker, 
       ));
 
       markers.add(Marker(
         markerId: MarkerId(showLocation.toString()),
-        position: LatLng(27.7137735, 85.315626), 
+        position: LatLng(11.56838,104.89477), 
         infoWindow: InfoWindow( 
-          title: 'Marker Title Third ',
-          snippet: 'My Custom Subtitle',
+          title: 'SETEC',
+          snippet: 'My location',
         ),
         icon: BitmapDescriptor.defaultMarker, 
       ));
