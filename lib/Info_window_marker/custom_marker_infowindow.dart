@@ -2,8 +2,9 @@ import 'package:custom_info_window/custom_info_window.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
-bool _isLoaded = false;
+// bool isSelected = false;
+// double underlineWith = 0;
+// bool _isLoaded = false;
 
 class CustomWindowMarker extends StatefulWidget {
   const CustomWindowMarker({Key? key}) : super(key: key);
@@ -167,8 +168,7 @@ class _CustomWindowMarkerState extends State<CustomWindowMarker> {
             }),
       );
       setState(() {
-        _isLoaded:
-        true;
+        // _isLoaded:true;
       });
     }
 
