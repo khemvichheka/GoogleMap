@@ -10,11 +10,11 @@ import 'package:google_map_2/homepage.dart';
 import 'package:google_map_2/map_style.dart';
 import 'package:google_map_2/multiple_marker.dart';
 import 'package:google_map_2/polyline/polyline_point.dart';
-import 'package:flutter_config/flutter_config.dart';
+// import 'package:flutter_config/flutter_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await FlutterConfig.loadEnvVariables();
+  // await FlutterConfig.loadEnvVariables();
   runApp(MyApp());
 }
 
