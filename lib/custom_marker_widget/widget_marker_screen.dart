@@ -86,19 +86,20 @@ class _WidgetMarkerScreenState extends State<WidgetMarkerScreen> {
     );
     setState(() => _isLoaded = true);
   }
-  Future<Marker> _generateMarkersFromWidgets(Map<String, dynamic> data) async => Future.delayed(Duration(milliseconds: 100), () async {   
+  Future<Marker> _generateMarkersFromWidgets(Map<String, dynamic> data) async => Future.delayed(Duration(milliseconds: 50), () async {   
     RenderRepaintBoundary boundary = data['globalKey']
         .currentContext
         ?.findRenderObject() as RenderRepaintBoundary;
-    print('11');
     ui.Image image = await boundary.toImage(pixelRatio: 5);
     ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-    print('12');
     return Marker(
       markerId: MarkerId(data['id']),
       position: data['position'],
+      infoWindow: InfoWindow(
+        // title: 'university',
+        // snippet: 'current location',
+      ),
       icon: BitmapDescriptor.fromBytes(byteData!.buffer.asUint8List()),
     );
-    // print('13');
   });
 }

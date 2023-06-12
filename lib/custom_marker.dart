@@ -22,16 +22,16 @@ class _CustomMarkerState extends State<CustomMarker> {
     { 
       "title": "Royal University of Phnom Penh",
       "description":"Russian Federation Blvd (110), Phnom Penh, Cambodia",
-      "image":'images/food-delivery.png',
+      "image":"assets/images/food-delivery.png",
     },
     { 
       "title": "Setec Institude",
-      "image": 'images/smart-car.png',
+      "image": "assets/images/smart-car.png",
       "description":"No. 86A, Street 110, Russian Federation Blvd (110), Phnom Penh, Cambodia"
     },
     { 
       "title": "Institute of foriegn langues",
-      "image": 'images/scooter.png',     
+      "image": "assets/images/scooter.png",     
       "description": "Russian Federation Blvd (110), Phnom Penh, Cambodia"
     }
    

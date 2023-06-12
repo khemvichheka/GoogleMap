@@ -109,6 +109,34 @@ class _HomePageMapState extends State<HomePageMap> {
                 },
               ),
             ),
+            Card(
+              color: Colors.purple[400],
+              child: ListTile(
+                leading: Icon(Icons.change_circle),
+                title: Text('Map Style'),
+                trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  Future.delayed(
+                    Duration(seconds: 1),
+                    () => Navigator.pushNamed(context, '/MapStyle'),
+                  );
+                },
+              ),
+            ),
+            Card(
+              color: Colors.green[400],
+              child: ListTile(
+                leading: Icon(Icons.change_circle),
+                title: Text('Calculate with two direction'),
+                trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  Future.delayed(
+                    Duration(seconds: 1),
+                    () => Navigator.pushNamed(context, '/Calculate'),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

@@ -1,0 +1,110 @@
+[
+    {
+      "featureType": "administrative.country",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#f95f4e"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.province",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#f83af2"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.province",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#f83a4d"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.park",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#d92697"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.school",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#d9bb26"
+        }
+      ]
+    },
+    {
+      "featureType": "road.arterial",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#594ef9"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#f9ea4e"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway.controlled_access",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#4ef9d6"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#ead985"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#503af8"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.station.airport",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#3a40f8"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#3aebf8"
+        }
+      ]
+    }
+  ]

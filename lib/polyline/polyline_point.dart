@@ -58,7 +58,7 @@ class _DrawPolylineState extends State<DrawPolyline> {
 
   Future<Set<Marker>> _initMarkers() async {
     final Uint8List byteIcon =
-        await mapsRepo.getBytesFromAsset('images/car.png', 100);
+        await mapsRepo.getBytesFromAsset('assets/images/air-freight.png', 100);
     final icon = BitmapDescriptor.fromBytes(byteIcon);
     List<Marker> markers = <Marker>[];
 

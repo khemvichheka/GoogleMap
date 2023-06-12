@@ -21,6 +21,10 @@ class _CustomMarkerInfoState extends State<CustomMarkerInfo> {
       Marker(
           markerId: const MarkerId('2'),
           position: const LatLng(1.32, 103.82),
+          infoWindow: InfoWindow(
+            title: '',
+            snippet: '',
+          ),
           icon:
               BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue)),
       Marker(

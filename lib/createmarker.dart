@@ -17,6 +17,10 @@ class _CreateMarkerState extends State<CreateMarker> {
     allMarkers.add(Marker(
         markerId: MarkerId('myMarker'),
         draggable: true,
+        infoWindow: InfoWindow( 
+          title: 'my first marker',
+          snippet: 'My location',
+        ),
         onTap: () {
           print('Marker Tapped');
         },

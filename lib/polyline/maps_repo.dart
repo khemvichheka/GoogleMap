@@ -29,7 +29,7 @@ Future<CameraPosition> getCurrentCameraPosition() async {
         target: LatLng(currentPos.latitude, currentPos.longitude), zoom: ZOOM);
   } else {
     throw Exception(
-        " Error current location because Google Maps permission was denied.");
+        "Error current location because Google Maps permission was denied.");
   }
 }
 
